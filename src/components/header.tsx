@@ -9,7 +9,7 @@ const Header = () => {
       <div className="flex items-center flex-row">
         <p className="font-bold text-xl">The Writrr</p>
       </div>
-      <div className="flex items-center gap-11 select-none">
+      <div className=" items-center hidden sm:flex gap-11 select-none">
         <div className="group">
           <Link href={"#"}>About</Link>
           <div className="group-hover:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>

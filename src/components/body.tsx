@@ -3,9 +3,9 @@ import React from "react";
 const Body = () => {
   return (
     <div className="py-28 p-4">
-      <div className=" w-[1100px] mx-auto space-y-5">
+      <div className=" sm:w-[1100px] mx-auto space-y-5">
         <div className="">
-          <h3 className="text-center text-8xl">
+          <h3 className="text-center text-3xl sm:text-8xl">
             Discover <br />
             Thrilling Stories Here
           </h3>
