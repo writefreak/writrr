@@ -1,10 +1,14 @@
+import { cn } from "@/lib/utils";
 import React from "react";
 
-const View = () => {
+interface Props {
+  className?: string;
+}
+const View = ({ className }: Props) => {
   return (
     <div>
-      <div className="py-14">
-        <p className="text-center text-2xl sm:text-3xl">
+      <div className={cn("py-14", className)}>
+        <p className="text-center text-2xl sm:text-5xl">
           View Recent Blogs Here
         </p>
       </div>

@@ -1,10 +1,11 @@
-import { title } from "process";
+"use client";
 import React from "react";
 import { Avatar } from "./ui/avatar";
 import { Card, CardContent } from "./ui/card";
 import { ArrowUpRight, Dot } from "lucide-react";
 import { ProfileImg } from "./profileimg";
 import Link from "next/link";
+import { Element } from "react-scroll";
 
 const BlogCards = () => {
   return (

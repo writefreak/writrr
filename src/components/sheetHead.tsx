@@ -15,6 +15,7 @@ import {
   UserRoundSearch,
 } from "lucide-react";
 import Link from "next/link";
+import About from "./about";
 
 interface Props {
   className?: string;
@@ -31,10 +32,10 @@ export function SheetHead({ className }: Props) {
           <SheetTitle>
             <div className="flex flex-col gap-10 select-none">
               <div className="group">
-                <Link href={"#"} className="flex items-center gap-2">
+                <div className="flex items-center gap-2">
                   <UserRoundSearch />
-                  About
-                </Link>
+                  <About />
+                </div>
                 <div className="group-hover:w-20 sm:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
               </div>
               <div className="group">

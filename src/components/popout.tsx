@@ -3,10 +3,9 @@ import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/useOutsideHook";
-import { div } from "framer-motion/client";
-import Find from "./search";
+import About from "./about";
 
-export function Popout() {
+export function PopOut() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
   );
@@ -74,7 +73,29 @@ export function Popout() {
             >
               <div>
                 <div className="flex justify-between items-start p-4">
-                  <div className=""></div>
+                  <div className="">
+                    <motion.h3
+                      layoutId={`title-${active.title}-${id}`}
+                      className="font-bold text-neutral-700 dark:text-neutral-200"
+                    >
+                      {active.title}
+                    </motion.h3>
+                    <motion.p
+                      layoutId={`description-${active.description}-${id}`}
+                      className="text-neutral-600 dark:text-neutral-400"
+                    >
+                      {active.description}
+                    </motion.p>
+                  </div>
+
+                  <motion.a
+                    layoutId={`button-${active.title}-${id}`}
+                    href={active.ctaLink}
+                    target="_blank"
+                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
+                  >
+                    {active.ctaText}
+                  </motion.a>
                 </div>
                 <div className="pt-4 relative px-4">
                   <motion.div
@@ -94,18 +115,32 @@ export function Popout() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-2xl mx-auto  gap-4">
+      <ul className="max-w-2xl mx-auto w-full gap-4">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center  rounded-xl cursor-pointer"
+            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col md:flex-row ">
               <motion.div layoutId={`image-${card.title}-${id}`}>
-                {/* <Find /> */}
+                <About />
               </motion.div>
+              <div className="">
+                <motion.h3
+                  layoutId={`title-${card.title}-${id}`}
+                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left"
+                >
+                  {card.title}
+                </motion.h3>
+                <motion.p
+                  layoutId={`description-${card.description}-${id}`}
+                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left"
+                >
+                  {card.description}
+                </motion.p>
+              </div>
             </div>
           </motion.div>
         ))}
@@ -151,9 +186,24 @@ const cards = [
   {
     description: "Lana Del Rey",
     title: "Summertime Sadness",
-    src: "/images/woman-taking-photo-rural-surroundings.jpg",
+    src: "/images/blog image.jpg",
+    ctaText: "Play",
+    ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
-      return <div>hello</div>;
+      return (
+        <p>
+          Lana Del Rey, an iconic American singer-songwriter, is celebrated for
+          her melancholic and cinematic music style. Born Elizabeth Woolridge
+          Grant in New York City, she has captivated audiences worldwide with
+          her haunting voice and introspective lyrics. <br /> <br /> Her songs
+          often explore themes of tragic romance, glamour, and melancholia,
+          drawing inspiration from both contemporary and vintage pop culture.
+          With a career that has seen numerous critically acclaimed albums, Lana
+          Del Rey has established herself as a unique and influential figure in
+          the music industry, earning a dedicated fan base and numerous
+          accolades.
+        </p>
+      );
     },
   },
 ];

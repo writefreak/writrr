@@ -3,6 +3,9 @@ import Link from "next/link";
 import Find from "./search";
 import { Profile } from "./profile";
 import { SheetHead } from "./sheetHead";
+import PopSearch from "./popsearch";
+import Blog from "./blog";
+import About from "./about";
 
 const Header = () => {
   return (
@@ -11,14 +14,8 @@ const Header = () => {
         <p className="font-bold text-xl">The Writrr</p>
       </div>
       <div className=" items-center hidden sm:flex gap-11 select-none">
-        <div className="group">
-          <Link href={"#"}>About</Link>
-          <div className="group-hover:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
-        </div>
-        <div className="group">
-          <Link href={"#"}>Blogs</Link>
-          <div className="group-hover:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
-        </div>
+        <About />
+        <Blog />
         <div className="group">
           <Link href={"#"}>Reviews</Link>
           <div className="group-hover:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
@@ -32,8 +29,10 @@ const Header = () => {
           <div className="group-hover:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
         </div>
       </div>
+
       <div className="flex items-center gap-3">
-        <Find />
+        {/* <Find /> */}
+        <PopSearch />
         <Profile />
         <SheetHead className="sm:hidden" />
       </div>
