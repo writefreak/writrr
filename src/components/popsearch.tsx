@@ -36,6 +36,25 @@ const PopSearch: React.FC = () => {
     };
   }, [isOpen]);
 
+  // Listen for the Ctrl + K keypress to open the search dialog
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      // Check if Ctrl + K is pressed
+      if (event.ctrlKey && event.key === "k") {
+        event.preventDefault(); // Prevent Chrome's default behavior
+        openDialog(); // Open the dialog
+      }
+    };
+
+    // Add the event listener for Ctrl + K
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Cleanup the event listener
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   const dialogContent = (
     <div
       className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center"
