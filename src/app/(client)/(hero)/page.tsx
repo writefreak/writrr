@@ -1,5 +1,8 @@
+import BlogCards from "@/components/blogcards";
 import Body from "@/components/body";
 import Header from "@/components/header";
+import { Home } from "@/components/home";
+import View from "@/components/view";
 import React from "react";
 
 const page = () => {
@@ -8,7 +11,9 @@ const page = () => {
       <div className="">
         <Header />
       </div>
-      <Body />
+      <Body className="" />
+      <View />
+      <BlogCards />
     </div>
   );
 };

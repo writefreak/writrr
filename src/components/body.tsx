@@ -1,20 +1,19 @@
+import { cn } from "@/lib/utils";
 import React from "react";
+import BodyText from "./bodytext";
+import { Button } from "./ui/button";
 
-const Body = () => {
+interface Props {
+  className?: string;
+}
+
+const Body = ({ className }: Props) => {
   return (
-    <div className="py-28 p-4">
-      <div className=" sm:w-[1100px] mx-auto space-y-5">
+    <div className={cn("sm:pt-36 p-4", className)}>
+      <div className=" sm:w-[1100px] mx-auto">
         <div className="">
-          <h3 className="text-center text-3xl sm:text-8xl">
-            Discover <br />
-            Thrilling Stories Here
-          </h3>
+          <BodyText />
         </div>
-        <img
-          src="/images/woman-taking-photo-rural-surroundings.jpg"
-          alt=""
-          className="w-full rounded-md"
-        />
       </div>
     </div>
   );
