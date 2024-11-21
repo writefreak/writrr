@@ -21,7 +21,7 @@ export function Profile() {
       <DropdownMenuTrigger asChild>
         <ProfileImg />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-36">
+      <DropdownMenuContent className="w-36 font-lato">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>

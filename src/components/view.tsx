@@ -8,8 +8,8 @@ const View = ({ className }: Props) => {
   return (
     <div>
       <div className={cn("py-14", className)}>
-        <p className="text-center text-2xl sm:text-5xl">
-          View Recent Blogs Here
+        <p className="text-center text-2xl sm:text-5xl font-raleway font-light sm:pt-36">
+          Recent Blogs Reside Here
         </p>
       </div>
     </div>

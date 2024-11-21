@@ -6,7 +6,7 @@ import View from "./view";
 
 const Bloglist = () => {
   return (
-    <Element name="bloghead" className="sm:pt-40">
+    <Element name="bloghead" className="sm:pt-1">
       <View className="hidden sm:block py-0 pb-9" />
       <BlogCards />
     </Element>

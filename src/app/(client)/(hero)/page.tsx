@@ -1,14 +1,12 @@
 import BackTop from "@/components/backTop";
-import BlogCards from "@/components/blogcards";
 import Bloglist from "@/components/bloglist";
 import Body from "@/components/body";
+import Footer from "@/components/footer";
 import Header from "@/components/header";
-import { Home } from "@/components/home";
-import { PopOut } from "@/components/popout";
-import PopSearch from "@/components/popsearch";
+import ResizedCat from "@/components/resizedcat";
+
 import View from "@/components/view";
 import React from "react";
-import { Element } from "react-scroll";
 
 const page = () => {
   return (
@@ -16,10 +14,12 @@ const page = () => {
       <div className="">
         <Header />
       </div>
-      <Body className="" />
-      <View className="sm:hidden" />
+      <Body />
+      <ResizedCat />
+      <View className="sm:hidden font-montserrat font-light" />
       <Bloglist />
       <BackTop />
+      <Footer />
     </div>
   );
 };

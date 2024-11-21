@@ -68,7 +68,7 @@ const PopSearch: React.FC = () => {
           <input
             type="text"
             placeholder="Search..."
-            className=" text-white placeholder:text-white bg-transparent  outline-none p-4 text-xl sm:w-96 shadow-lg"
+            className=" text-white font-lato  placeholder:text-white bg-transparent  outline-none p-4 text-xl sm:w-96 shadow-lg"
           />
           <Find />
         </form>

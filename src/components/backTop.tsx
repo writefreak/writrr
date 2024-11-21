@@ -32,7 +32,7 @@ const BackTop = () => {
             smooth: true,
           });
         }}
-        className="bg-lime-600 text-white p-1 rounded-full h-full hover:bg-black hover:sm:bg-white hover:sm:text-black hover:text-white"
+        className="bg-black sm:bg-lime-600 text-white p-1 rounded-full h-full hover:bg-black hover:sm:bg-white hover:sm:text-black hover:text-white"
       >
         <ChevronUp />
       </Button>

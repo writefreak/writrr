@@ -1,7 +1,46 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import {
+  Inter,
+  Oswald,
+  Lato,
+  Montserrat,
+  Poppins,
+  Raleway,
+} from "next/font/google";
 
+const inter = Inter({
+  variable: "--font-inter",
+  weight: ["100", "200", "300", "500", "700"],
+  subsets: ["greek"],
+});
+const raleway = Raleway({
+  variable: "--font-raleway",
+  weight: ["100", "200", "300", "500", "700"],
+  subsets: ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
+});
+const poppins = Poppins({
+  variable: "--font-poppins",
+  weight: ["100", "200", "300", "500", "700"],
+  subsets: ["latin", "latin-ext"],
+});
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  weight: ["100", "200", "300", "500", "700"],
+  subsets: ["cyrillic", "cyrillic-ext", "latin", "vietnamese"],
+});
+const lato = Lato({
+  variable: "--font-lato",
+  weight: ["100", "300", "700", "900"],
+  subsets: ["latin"],
+  display: "swap",
+});
+const oswald = Oswald({
+  variable: "--font-oswald",
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+});
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -26,7 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${raleway.variable} ${poppins.variable} ${montserrat.variable} ${lato.variable} ${oswald.variable} ${inter.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>

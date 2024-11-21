@@ -1,20 +1,18 @@
 import React from "react";
-import { Button } from "./ui/button";
-import Link from "next/link";
 
 const BodyText = () => {
   return (
-    <div>
+    <div className="">
       <div className="flex pt-28 sm:pt-0 flex-col gap-4 sm:gap-8 h-full sm:h-screen">
-        <h3 className="text-center sm:text-left text-3xl sm:text-8xl">
+        <h3 className="text-center sm:text-left text-3xl sm:text-8xl font-raleway ">
           Welcome <br />
-          To a Fascinating World!
+          To a Fascinating <br className="hidden sm:block" /> World!
         </h3>
 
-        <h3 className="text-center sm:text-left text-base sm:text-3xl pb-9">
+        <p className="text-center sm:text-left text-base sm:text-3xl pb-9 font-montserrat font-light">
           Stay informed and inspired <br className="" />
           with the latest tech insights and trends.
-        </h3>
+        </p>
       </div>
 
       <img

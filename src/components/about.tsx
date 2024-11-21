@@ -48,8 +48,8 @@ const About: React.FC = () => {
       >
         {content.map((c) => (
           <Card key={c.id} className="p-7">
-            <h3 className="text-3xl py-4 font-bold">About Us</h3>
-            <p>{c.text}</p>
+            <h3 className="text-3xl py-4 font-bold font-raleway">About Us</h3>
+            <p className="font-inter font-light">{c.text}</p>
           </Card>
         ))}
       </div>
@@ -62,7 +62,9 @@ const About: React.FC = () => {
       <div onClick={openDialog} className=" ">
         <div className="">
           <div className="group">
-            <Link href={"#"}>About</Link>
+            <Link href={"#"} className="font-lato">
+              About
+            </Link>
             <div className="group-hover:sm:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
           </div>
         </div>

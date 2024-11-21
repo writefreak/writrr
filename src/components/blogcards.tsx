@@ -17,22 +17,26 @@ const BlogCards = () => {
             <div className="p-2 space-y-1">
               <div className="flex items-center">
                 <Dot className="text-lime-600" />
-                <p className="text-sm font-semibold text-black/50">
+                <p className="text-sm font-semibold text-black/50 font-lato">
                   {d.category}
                 </p>
               </div>
               <div className="flex items-center justify-between">
-                <h3 className="text-xl font-bold">{d.title}</h3>
+                <h3 className="text-xl font-bold font-raleway">{d.title}</h3>
                 <Link href={"#"}>
                   <ArrowUpRight className="w-6 h-6" />
                 </Link>
               </div>
-              <p className="line-clamp-2 text-sm text-black/50">{d.slug}</p>
+              <p className="line-clamp-2 text-sm text-black/50 font-poppins font-light">
+                {d.slug}
+              </p>
               <div className="flex items-center gap-2 py-3">
                 <div>{d.avatar}</div>
                 <div className="leading-6">
                   <p className="text-sm font-bold">{d.name}</p>
-                  <p className="text-xs text-black/50">{d.date}</p>
+                  <p className="text-xs text-black/50 font-lato font-semibold">
+                    {d.date}
+                  </p>
                 </div>
               </div>
             </div>
