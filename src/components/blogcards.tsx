@@ -5,11 +5,19 @@ import { Card, CardContent } from "./ui/card";
 import { ArrowUpRight, Dot } from "lucide-react";
 import { ProfileImg } from "./profileimg";
 import Link from "next/link";
-import { Element } from "react-scroll";
+import { cn } from "@/lib/utils";
 
-const BlogCards = () => {
+interface Props {
+  className?: string;
+  id?: any;
+}
+
+const BlogCards = ({ className, id }: Props) => {
   return (
-    <div className="grid sm:grid-cols-4 gap-5 p-4 ">
+    <div
+      className={cn("grid sm:grid-cols-4 gap-5 p-4 sm:px-20", className)}
+      id={cn("", id)}
+    >
       {data.map((d) => (
         <Card key={d.id} className="rounded-xl ">
           <div className="">

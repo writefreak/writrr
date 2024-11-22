@@ -6,7 +6,7 @@ import { Element } from "react-scroll";
 const ResizedCat = () => {
   return (
     <Element name="categories">
-      <div className="sm:pt-24">
+      <div className="sm:pt-24 sm:px-16">
         <p className="font-raleway text-center text-2xl sm:text-5xl font-light py-10">
           Categories Reside Here
         </p>

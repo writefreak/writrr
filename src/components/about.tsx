@@ -61,12 +61,12 @@ const About: React.FC = () => {
       {/* div to trigger the search dialog */}
       <div onClick={openDialog} className=" ">
         <div className="">
-          <div className="group">
+          {/* <div className="group">
             <Link href={"#"} className="font-lato">
               About
             </Link>
             <div className="group-hover:sm:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
-          </div>
+          </div> */}
         </div>
       </div>
 

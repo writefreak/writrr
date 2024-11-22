@@ -14,15 +14,20 @@ const Header = () => {
         <p className="font-semibold sm:font-bold text-xl">The Writrr</p>
       </div>
       <div className=" items-center hidden sm:flex gap-11 select-none">
-        <About />
+        <div className="group">
+          <Link href={"/about"} className="font-lato">
+            About
+          </Link>
+          <div className="group-hover:sm:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
+        </div>
         <Blog />
         <div className="group">
-          <Link href={"#"}>Reviews</Link>
+          <Link href={"/reviews"}>Reviews</Link>
           <div className="group-hover:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
         </div>
         <BlogCat />
         <div className="group">
-          <Link href={"#"}>Donations</Link>
+          <Link href={"/donations"}>Donations</Link>
           <div className="group-hover:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
         </div>
       </div>

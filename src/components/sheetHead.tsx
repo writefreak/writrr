@@ -35,7 +35,12 @@ export function SheetHead({ className }: Props) {
               <div className="group">
                 <div className="flex items-center gap-2">
                   <UserRoundSearch />
-                  <About />
+                  <div className="group">
+                    <Link href={"/about"} className="font-lato">
+                      About
+                    </Link>
+                    <div className="group-hover:sm:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
+                  </div>
                 </div>
                 <div className="group-hover:w-20 sm:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
               </div>
@@ -51,7 +56,10 @@ export function SheetHead({ className }: Props) {
                 <div className="group-hover:w-20 sm:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
               </div>
               <div className="group">
-                <Link href={"#"} className="flex items-center gap-2 font-lato">
+                <Link
+                  href={"/reviews"}
+                  className="flex items-center gap-2 font-lato"
+                >
                   <Star />
                   Reviews
                 </Link>
