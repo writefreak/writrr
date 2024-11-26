@@ -1,6 +1,7 @@
 import AboutText from "@/components/about/aboutText";
 import ImgDesc from "@/components/about/imgdesc";
 import Footer from "@/components/footer";
+import ProgressBar from "@/components/progressBar";
 import React from "react";
 
 const Page = () => {

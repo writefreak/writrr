@@ -15,8 +15,8 @@ const page = () => {
     <div className="">
       <div className="">
         <Header />
-        <PageProg />
       </div>
+      <ProgressBar />
       <Body />
       <ResizedCat />
       <View className="sm:hidden font-montserrat font-light" />
