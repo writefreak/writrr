@@ -16,7 +16,7 @@ const page = () => {
       <div className="">
         <Header />
       </div>
-      <ProgressBar />
+
       <Body />
       <ResizedCat />
       <View className="sm:hidden font-montserrat font-light" />
