@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ProfileImg } from "./profileimg";
+import Link from "next/link";
 
 export function Profile() {
   return (
@@ -26,7 +27,7 @@ export function Profile() {
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <User />
-          <span>Profile</span>
+          <Link href={"#"}>Profile</Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
           <Settings />
@@ -34,7 +35,7 @@ export function Profile() {
         </DropdownMenuItem>
         <DropdownMenuItem>
           <LogOut />
-          <span>Logout</span>
+          <Link href={"/login"}>Logout</Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
