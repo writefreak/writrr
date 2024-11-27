@@ -23,14 +23,17 @@ const CommentBox = ({ className }: Props) => {
             </Button>
           </form>
         </div>
-        <div className="hidden sm:flex ">
-          <textarea
-            name=""
-            id=""
-            className="w-full outline-none border border-lime-600 rounded-xl p-3 h-52"
-            placeholder="Write your review here..."
-          ></textarea>
-        </div>
+        <form action="">
+          <div className="hidden sm:flex flex-col gap-3">
+            <textarea
+              name=""
+              id=""
+              className="w-full outline-none border border-lime-600 rounded-xl p-3 h-52"
+              placeholder="Write your review here..."
+            ></textarea>
+            <Button className="w-full bg-lime-600 text-base">Submit</Button>
+          </div>
+        </form>
         <p className="text-xl sm:text-2xl">Don't Forget to Rate us</p>
         <RateStar />
       </div>
