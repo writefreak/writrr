@@ -45,14 +45,13 @@ export function SheetHead({ className }: Props) {
                 <div className="group-hover:w-20 sm:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
               </div>
               <div className="group">
-                <ScrollLink
-                  to="bloghead"
+                <Link
+                  href={"/blogs"}
                   className="flex items-center gap-2 font-lato"
-                  duration={5000}
                 >
                   <BookOpenText />
                   Blogs
-                </ScrollLink>
+                </Link>
                 <div className="group-hover:w-20 sm:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
               </div>
               <div className="group">

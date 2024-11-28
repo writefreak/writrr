@@ -1,0 +1,62 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id String @id @default(cuid())
+  firstName String
+  lastName String
+  email String @unique
+  phoneNumber String?
+  password String?
+  imageId String?
+  image Images?
+  blogPosts Blogs[]
+}
+
+
+model Blogs {
+  id String @id @default(cuid())//generate unique id so user cant guess
+  title String @unique
+  description String
+  images Images[]
+  links String[]
+  verified Boolean @default(false)
+  created DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  // relations
+  categoryId String
+  category Category @relation(fields: [categoryId], references: [id])
+  userId String
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Images {
+  id String @id @default(cuid())
+  url String
+  createdAt DateTime @default(now())
+  blogId String?
+  blog Blogs? @relation(fields: [blogId], references: [id])
+  userId String? @unique
+  user User? @relation(fields: [userId], references: [id])
+}
+
+model Category {
+  id String @id @default(cuid())
+  name String @unique
+  slug String @unique
+  createdAt DateTime @default(now())
+  blogs Blogs[]
+}

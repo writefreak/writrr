@@ -20,7 +20,7 @@ const BlogCards = ({ className, id }: Props) => {
     >
       {data.map((d) => (
         <Card key={d.id} className="rounded-xl ">
-          <div className="">
+          <Link href={`/blogs/${d.id}`} className="">
             <img src={d.img} alt="" className="rounded-xl" />
             <div className="p-2 space-y-1">
               <div className="flex items-center">
@@ -31,9 +31,8 @@ const BlogCards = ({ className, id }: Props) => {
               </div>
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-bold font-raleway">{d.title}</h3>
-                <Link href={"#"}>
-                  <ArrowUpRight className="w-6 h-6" />
-                </Link>
+
+                <ArrowUpRight className="w-6 h-6" />
               </div>
               <p className="line-clamp-2 text-sm text-black/50 font-poppins font-light">
                 {d.slug}
@@ -48,7 +47,7 @@ const BlogCards = ({ className, id }: Props) => {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         </Card>
       ))}
     </div>
@@ -75,7 +74,7 @@ const data = [
     name: "Heritage",
     date: "12 Nov, 2024",
     avatar: <ProfileImg />,
-    img: "/images/ai img.jpg",
+    img: `/images/ai img (1).jpg`,
     slug: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore perspiciatis provident magnam ullam praesentium necessitatibus voluptate alias facere obcaecati sit.",
   },
   {

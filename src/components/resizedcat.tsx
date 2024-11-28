@@ -45,25 +45,25 @@ export default ResizedCat;
 const category = [
   {
     id: 1,
-    img: `/images/ai img.jpg`,
+    img: `/images/ai img (1).jpg`,
     title: "Technology",
     slug: "Browse our vast library of stories relating to the world of technology to gain ideas and insights",
   },
   {
     id: 2,
-    img: `/images/ai img.jpg`,
+    img: `/images/ai img (1).jpg`,
     title: "Technology",
     slug: "Browse our vast library of stories relating to the world of technology to gain ideas and insights",
   },
   {
     id: 3,
-    img: `/images/ai img.jpg`,
+    img: `/images/ai img (1).jpg`,
     title: "Technology",
     slug: "Browse our vast library of stories relating to the world of technology to gain ideas and insights",
   },
   {
     id: 4,
-    img: `/images/ai img.jpg`,
+    img: `/images/ai img (1).jpg`,
     title: "Technology",
     slug: "Browse our vast library of stories relating to the world of technology to gain ideas and insights",
   },

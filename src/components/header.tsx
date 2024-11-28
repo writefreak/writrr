@@ -20,7 +20,11 @@ const Header = () => {
           </Link>
           <div className="group-hover:sm:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
         </div>
-        <Blog />
+        {/* <Blog /> */}
+        <div className="group">
+          <Link href={"/blogs"}>Blogs</Link>
+          <div className="group-hover:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
+        </div>
         <div className="group">
           <Link href={"/reviews"}>Reviews</Link>
           <div className="group-hover:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
