@@ -3,24 +3,24 @@ import Bloglist from "@/components/bloglist";
 import Body from "@/components/body";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import PageProg from "@/components/pageprog";
-import ProgressBar from "@/components/progressBar";
 import ResizedCat from "@/components/resizedcat";
 
 import View from "@/components/view";
+import { getBlogs } from "@/lib/actions/blog";
 import React from "react";
 
-const page = () => {
+const page = async () => {
+  const data = await getBlogs();
   return (
-    <div className="">
+    <div className="sm:w-full">
       <div className="">
         <Header />
       </div>
 
       <Body />
       <ResizedCat />
-      <View className="sm:hidden font-montserrat font-light" />
-      <Bloglist id={"blogs"} />
+      <View className="font-montserrat font-light" />
+      <Bloglist id={"blogs"} data={data} />
       <BackTop />
       <Footer />
     </div>

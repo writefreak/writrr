@@ -1,22 +1,33 @@
 "use client";
-import React from "react";
-import { Element } from "react-scroll";
+import React, { useState, useEffect } from "react";
 import BlogCards from "./blogcards";
-import View from "./view";
 import { cn } from "@/lib/utils";
+import { BlogsType } from "@/lib/actions/blog";
 
-interface Props {
-  className?: string;
-  id?: any;
+interface Blog {
+  id: number;
+  title: string;
+  content: string;
+  description: string;
+  categoryId: string;
+  userId: string;
+  created: Date;
 }
 
-const Bloglist = ({ id, className }: Props) => {
+interface Props {
+  id: any;
+  data: BlogsType;
+}
+
+const BlogList = ({ data, id }: Props) => {
   return (
-    <Element id={cn("", id)} name="bloghead" className="sm:pt-1">
-      <View className="hidden sm:block py-0 pb-9" />
-      <BlogCards />
-    </Element>
+    <div id={cn("", id)} className="grid sm:grid-cols-4">
+      {/* Map through the blogs array and pass each blog to the BlogCards component */}
+      {data.map((blog) => (
+        <BlogCards key={blog.id} blog={blog} />
+      ))}
+    </div>
   );
 };
 
-export default Bloglist;
+export default BlogList;
