@@ -7,8 +7,7 @@ const LoginForm = () => {
   return (
     <div className="flex p-6 pt-16 justify-center flex-col  max-w-[500px]  h-full font-raleway sm:h-screen sm:mx-auto">
       <form action="">
-        {" "}
-        <div className="flex flex-col gap-2 ">
+        <div className="flex flex-col gap-3 ">
           <p className="text-3xl font-bold">Welcome Back!</p>
           <h3 className="text-xl">Login Here</h3>
         </div>
