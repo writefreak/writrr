@@ -35,7 +35,7 @@ const page = async (props: Props) => {
     <div className="p-6 md:p-0 space-y-5">
       <div className="md:w-full md:h-[90vh] h-[300px] object-cover">
         <Picture
-          src="/images/innovation-technology-be-creative-futuristic-concept.jpg"
+          src="/images/medium-shot-man-wearing-vr-glasses (1).jpg"
           alt=""
           className="w-full h-full rounded-xl md:rounded-none"
         />
