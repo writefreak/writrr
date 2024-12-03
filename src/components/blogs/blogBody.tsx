@@ -1,8 +1,11 @@
+"use client";
 import { BlogsType } from "@/lib/actions/blog";
-import Link from "next/link";
 import React from "react";
-import Picture from "../ui/image";
 import BlogHero from "./blogHero";
+import { Card } from "../ui/card";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { Element } from "react-scroll";
 
 interface Props {
   id?: any;
@@ -10,16 +13,41 @@ interface Props {
 }
 const BlogBody = ({ id, data }: Props) => {
   return (
-    <div>
-      <div className="md:w-full text-center h-screen">
+    <Element name="blogprev">
+      <div className="text-center  md:h-screen">
         <BlogHero />
       </div>
-      <div className="">
+      <div className="grid md:grid-cols-4 gap-3 p-4">
         {data.map((blog) => (
-          <div key={blog.id} className=""></div>
+          <Card key={blog.id} className="rounded-xl">
+            <div className="flex flex-col gap-2">
+              <div>
+                <img
+                  alt=""
+                  src="/images/full-shot-man-experiencing-virtual-reality.jpg"
+                  className="rounded-xl object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+
+              <div className="space-y-2 p-2">
+                <h2 className="text-xl md:text-base font-bold">{blog.title}</h2>
+                <p className="line-clamp-2 text-sm md:text-sm font-poppins font-light">
+                  {blog.description}
+                </p>
+
+                <Link
+                  href={`/blogs/${blog.id}`}
+                  className="flex items-center hover:underline decoration-1 justify-end py-2 text-lime-600"
+                >
+                  <p className="text-sm">Read More</p>
+                  <ArrowUpRight strokeWidth={1} height={18} width={18} />
+                </Link>
+              </div>
+            </div>
+          </Card>
         ))}
       </div>
-    </div>
+    </Element>
   );
 };
 

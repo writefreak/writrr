@@ -4,10 +4,10 @@ import "./globals.css";
 import {
   Inter,
   Oswald,
-  Lato,
-  Montserrat,
-  Poppins,
   Raleway,
+  Poppins,
+  Montserrat,
+  Lato,
 } from "next/font/google";
 
 const inter = Inter({
@@ -65,7 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${raleway.variable} ${poppins.variable} ${montserrat.variable} ${lato.variable} ${oswald.variable} ${inter.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${raleway.variable} ${poppins.variable} ${montserrat.variable} ${lato.variable} ${oswald.variable} ${inter.variable} ${geistMono.variable} font-raleway antialiased`}
       >
         {children}
       </body>

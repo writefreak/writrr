@@ -4,7 +4,7 @@ const BodyText = () => {
   return (
     <div className="">
       <div className="flex pt-28 sm:pt-0 flex-col gap-4 sm:gap-8 h-full sm:h-screen">
-        <h3 className="text-center sm:text-left text-3xl sm:text-8xl font-raleway ">
+        <h3 className="text-center sm:text-left text-3xl sm:text-8xl font-raleway">
           Welcome <br />
           To a Fascinating <br className="hidden sm:block" /> World!
         </h3>

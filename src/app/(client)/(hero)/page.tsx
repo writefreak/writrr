@@ -19,7 +19,7 @@ const page = async () => {
 
       <Body />
       <ResizedCat />
-      <View className="font-montserrat font-light" />
+      <View className="font-montserrat  font-light" />
       <Bloglist id={"blogs"} data={data} />
       <BackTop />
       <Footer />
