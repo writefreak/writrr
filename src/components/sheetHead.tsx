@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import {
   BookOpenText,
   HandHelping,
+  Lock,
   Menu,
   Star,
   UserRoundSearch,
@@ -72,9 +73,13 @@ export function SheetHead({ className }: Props) {
               <Categories />
 
               <div className="group">
-                <Link href={"#"} className="flex items-center gap-2 font-lato">
-                  <HandHelping />
-                  Donations
+                {/*Hide this section later and make it show if the user profile == my name*/}
+                <Link
+                  href={"/dashboard"}
+                  className="flex items-center gap-2 font-lato"
+                >
+                  <Lock />
+                  Admin Page
                 </Link>
                 <div className="group-hover:w-28 sm:w-full relative w-0 transition-all duration-1000 h-1 bottom-0 left-0 right-0 z-50 bg-lime-600"></div>
               </div>

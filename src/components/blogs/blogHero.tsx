@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { ChevronDown } from "lucide-react";
 import Catpills from "./catpills";
 import { Link as ScrollLink } from "react-scroll";
+import BlogSearch from "./blogSearch";
 
 const BlogHero = () => {
   const handleSetActive = (to: string) => {
@@ -11,11 +12,12 @@ const BlogHero = () => {
   };
   return (
     <div className="">
-      <div className="flex flex-col py-16 gap-4 md:gap-8 md:h-screen md:justify-center items-center">
-        <h1 className="font-raleway md:text-8xl text-3xl py-8">
-          Ignite Your Imagination <br /> With The Stories We Tell {}
+      <div className="flex flex-col py-16 gap-4 md:gap-3 md:h-screen items-center">
+        <h1 className="font-raleway md:text-6xl text-3xl py-8">
+          Ignite Your Imagination <br /> With The Stories We Tell
         </h1>
-        <div className="">
+        <div className="flex flex-col-reverse md:flex-col gap-4">
+          <BlogSearch className="" />
           <Catpills />
         </div>
         <ScrollLink
