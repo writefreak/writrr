@@ -34,7 +34,7 @@ const MobileAdmin = ({ className }: Props) => {
                 <p className="text-sm">Dashboard</p>
               </Link>
               <Link
-                href={"/"}
+                href={"/user"}
                 className="flex hover:bg-lime-600/20 items-center rounded-md p-1.5 gap-4 "
               >
                 <User className="text-lime-600" width={18} />
