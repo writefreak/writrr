@@ -4,7 +4,7 @@ import SearchBar from "./search";
 
 const AllUsers = () => {
   return (
-    <div className="md:flex pt-4 items-center md:w-[900px] justify-between">
+    <div className="flex  space-y-3 pt-6 md:pt-4 items-center md:w-[900px] justify-between">
       <h3>All Users</h3>
       <SearchBar />
     </div>

@@ -1,9 +1,16 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
-export function ProfileImg() {
+import { cn } from "@/lib/utils";
+interface Props {
+  className?: string;
+}
+export function ProfileImg({ className }: Props) {
   return (
     <Avatar>
-      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      <AvatarImage
+        className={cn("", className)}
+        src="https://github.com/shadcn.png"
+        alt="@shadcn"
+      />
       <AvatarFallback>CN</AvatarFallback>
     </Avatar>
   );
