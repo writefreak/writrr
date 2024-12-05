@@ -24,7 +24,7 @@ const MainMenu = () => {
         <p className="text-sm">Dashboard</p>
       </Link>
       <Link
-        href={"/"}
+        href={"/user"}
         className="flex items-center rounded-md p-1.5 gap-4 hover:bg-white/10 "
       >
         <User className="text-lime-600" width={18} />

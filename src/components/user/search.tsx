@@ -6,22 +6,26 @@ const SearchBar = () => {
   return (
     <div className="flex items-center gap-2">
       <div>
-        <div className="flex items-center border p-1 gap-2 border-black rounded-md">
+        <form className="flex items-center border p-1 gap-2 border-black rounded-md">
           <Search />
           <input
             type="text"
             className="bg-transparent outline-none"
             placeholder="search..."
           />
-        </div>
+        </form>
       </div>
       <div className="flex items-center gap-2">
         {btnData.map((b) => (
-          <Button key={b.id} className="flex h-9 items-center">
+          <Button key={b.id} className="md:flex h-9 items-center hidden">
             {b.title}
             {b.icon}
           </Button>
         ))}
+        <Button className="flex h-9 md:hidden items-center">
+          <Plus />
+          Add User
+        </Button>
       </div>
     </div>
   );
