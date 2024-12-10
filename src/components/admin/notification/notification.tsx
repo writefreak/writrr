@@ -3,6 +3,7 @@ import React from "react";
 import { Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import CustomAvatar from "./customAvatar";
+import { Card } from "@/components/ui/card";
 
 const Notifications = () => {
   return (
@@ -17,9 +18,9 @@ const Notifications = () => {
           <div key={d.id} className="pb-5 space-y-3">
             <p> {d.day}</p>
             {strips.map((strip) => (
-              <div
+              <Card
                 key={strip.id}
-                className="flex items-center gap-4 bg-[#030712] dark:border text-white md:w-[900px] px-4 py-3 rounded-md justify-between"
+                className="flex items-center gap-4  dark:border md:w-[900px] px-4 py-3 rounded-md justify-between"
               >
                 <div className="flex gap-3 items-center">
                   {strip.avatar}
@@ -31,15 +32,15 @@ const Notifications = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Button className="bg-white text-xs text-black hover:bg-white/50 hover:text-white">
+                  <Button className="bg-black rounded-full h-7 text-xs hover:bg-black/80 hover:text-white">
                     View
                   </Button>
-                  <Button variant={"destructive"} className="">
-                    <Trash2 width={18} />
+                  <Button className="bg-red-800 rounded-full h-7 text-xs hover:bg-red-700">
+                    <Trash2 width={16} strokeWidth={2} />
                     <span className="hidden md:block"> Delete</span>
                   </Button>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         ))}
