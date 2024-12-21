@@ -1,6 +1,6 @@
 import React from "react";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../ui/sheet";
-import { Menu } from "lucide-react";
+import { Home, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   BellRing,
@@ -26,6 +26,13 @@ const MobileAdmin = ({ className }: Props) => {
             {/* <MainMenu /> */}
             <div className="space-y-5 text-sm">
               <p className="text-sm hidden md:block">Main Menu</p>
+              <Link
+                href={"/"}
+                className="flex  hover:bg-lime-600/20 gap-4 items-center bg-white/10 p-1.5 rounded-md"
+              >
+                <Home width={18} className="text-lime-600" />
+                <p className="text-sm">Home</p>
+              </Link>
               <Link
                 href={"/dashboard"}
                 className="flex  hover:bg-lime-600/20 gap-4 items-center bg-white/10 p-1.5 rounded-md"

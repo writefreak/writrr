@@ -27,7 +27,7 @@ export function Profile() {
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <User />
-          <Link href={"/profile"}>Profile</Link>
+          <Link href={"/profile/profileDesc"}>Profile</Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
           <Settings />
