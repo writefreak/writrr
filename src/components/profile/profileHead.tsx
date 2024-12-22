@@ -3,7 +3,8 @@ import UserImg from "../user/userImg";
 import { Button } from "../ui/button";
 import ProfileAbout from "./profileAbout";
 import ProfileDetails from "./profileDetails";
-import { Delete, Trash } from "lucide-react";
+import { Delete } from "./delete";
+import { Edit } from "./edit";
 
 const ProfileHead = () => {
   return (
@@ -22,9 +23,7 @@ const ProfileHead = () => {
           <div className="border border-black flex items-center text-xs h-8 rounded-full px-5">
             User
           </div>
-          <Button className="bg-black h-8 text-xs rounded-full">
-            Edit details
-          </Button>
+          <Edit />
         </div>
       </div>
 
@@ -33,9 +32,7 @@ const ProfileHead = () => {
         <ProfileDetails />
       </div>
       <div className="px-4">
-        <Button className="bg-red-600 h-8 text-xs rounded-full flex items-center">
-          <Trash /> Delete Account
-        </Button>
+        <Delete />
       </div>
     </div>
   );

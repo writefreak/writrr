@@ -16,59 +16,16 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import NewBlogContent from "./newBlogContent";
+import { cn } from "@/lib/utils";
 
-const data = [
-  {
-    goal: 400,
-  },
-  {
-    goal: 300,
-  },
-  {
-    goal: 200,
-  },
-  {
-    goal: 300,
-  },
-  {
-    goal: 200,
-  },
-  {
-    goal: 278,
-  },
-  {
-    goal: 189,
-  },
-  {
-    goal: 239,
-  },
-  {
-    goal: 300,
-  },
-  {
-    goal: 200,
-  },
-  {
-    goal: 278,
-  },
-  {
-    goal: 189,
-  },
-  {
-    goal: 349,
-  },
-];
+interface Props {
+  className?: string;
+}
 
-export function BlogDrawer() {
-  const [goal, setGoal] = React.useState(350);
-
-  function onClick(adjustment: number) {
-    setGoal(Math.max(200, Math.min(400, goal + adjustment)));
-  }
-
+export function BlogDrawer({ className }: Props) {
   return (
     <Drawer>
-      <DrawerTrigger asChild>
+      <DrawerTrigger asChild className={cn("", className)}>
         <Button
           variant={"outline"}
           className="w-[6rem] md:w-auto flex items-center bg-lime-600 text-white hover:bg-lime-600/90 hover:text-white gap-2 dark:border-white dark:hover:bg-white/30"
@@ -87,7 +44,7 @@ export function BlogDrawer() {
           </DrawerDescription>
         </DrawerHeader>
 
-        <div className="mt-3 md:h-[200px] md:p-6 p-4 h-[300px]">
+        <div className="mt-3 md:h-[200px] md:p-6 p-4 h-[96vh]">
           {/* put whatever I'm putting here cus this height controls the drawer height */}
           <NewBlogContent />
         </div>
