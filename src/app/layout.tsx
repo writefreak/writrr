@@ -9,6 +9,7 @@ import {
   Montserrat,
   Lato,
 } from "next/font/google";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -68,6 +69,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${raleway.variable} ${poppins.variable} ${montserrat.variable} ${lato.variable} ${oswald.variable} ${inter.variable} ${geistMono.variable} font-raleway antialiased`}
       >
         {children}
+        <Toaster
+          richColors={true}
+          duration={4000}
+          theme="system"
+          position="bottom-right"
+        />
       </body>
     </html>
   );

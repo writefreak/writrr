@@ -7,6 +7,8 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { BlogsType } from "@/lib/actions/blog";
 import { format } from "date-fns";
+import Image from "./image";
+import HtmlText from "./html-text";
 
 interface Props {
   blog: BlogsType[0]; // Accept a single blog object here, not an array
@@ -15,17 +17,17 @@ interface Props {
 
 const BlogCards = ({ blog, className }: Props) => {
   return (
-    <div className={cn("grid gap-5 p-4 sm:", className)} id={cn("")}>
+    <div className={cn("grid grid-cols-1  p-4 md:", className)} id={cn("")}>
       <Card key={blog.id} className="rounded-xl">
         <Link href={`/blogs/${blog.id}`} className="">
           {/* dynamic paging above */}
 
-          <img
-            src={
-              "/images/man-wearing-smart-glasses-touching-virtual-screen-futuristic-technology-digital-remix.jpg"
-            }
+          <Image
+            folderName="blogs"
+            bucketName="images"
+            src={blog.images[0].url}
             alt=""
-            className="rounded-xl"
+            className="rounded-xl h-[250px] md:h-[170px] object-cover w-[390px] md:w-full"
           />
           <div className="p-3 space-y-1 flex flex-col">
             <div className="flex items-center">
@@ -36,15 +38,14 @@ const BlogCards = ({ blog, className }: Props) => {
             </div>
             <div className="flex flex-col h-full flex-1 gap-2">
               <div className="flex items-center justify-between">
-                <h3 className="text-base font-bold font-raleway">
-                  {blog.title}
-                </h3>
+                <h3 className="text-sm font-bold font-raleway">{blog.title}</h3>
 
                 <ArrowUpRight className="w-6 h-6" />
               </div>
-              <p className="line-clamp-2 text-sm text-black/50 font-poppins font-light">
-                {blog.description}
-              </p>
+              <HtmlText
+                text={blog.description}
+                className="text-xs line-clamp-4 text-neutral-500 font-montserrat font-light"
+              />
               <div className="flex items-center gap-2 py-3">
                 <div>
                   <ProfileImg />

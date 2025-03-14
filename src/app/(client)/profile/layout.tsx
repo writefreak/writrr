@@ -4,6 +4,7 @@ import Sidebar from "@/components/admin/sidebar";
 import ProfileBar from "@/components/profile/profileBar";
 import ProfileUserMob from "@/components/profile/profileUserMob";
 import React from "react";
+import page from "./page";
 
 const UserLayout = ({
   children,

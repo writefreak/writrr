@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../ui/sheet";
 import { Home, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -10,6 +10,7 @@ import {
   User,
 } from "lucide-react";
 import Link from "next/link";
+
 interface Props {
   className?: string;
 }
@@ -23,19 +24,18 @@ const ProfileUserMob = ({ className }: Props) => {
         </SheetTrigger>
         <SheetContent>
           <SheetTitle>
-            {/* <MainMenu /> */}
             <div className="space-y-5 text-sm">
               <p className="text-sm hidden md:block">Main Menu</p>
               <Link
                 href={"/"}
-                className="flex  hover:bg-lime-600/20 gap-4 items-center bg-white/10 p-1.5 rounded-md"
+                className="flex hover:bg-lime-600/20 gap-4 items-center bg-white/10 p-1.5 rounded-md"
               >
                 <Home width={18} className="text-lime-600" />
                 <p className="text-sm">Home</p>
               </Link>
               <Link
                 href={"/profile/profileDashboard"}
-                className="flex  hover:bg-lime-600/20 gap-4 items-center bg-white/10 p-1.5 rounded-md"
+                className="flex hover:bg-lime-600/20 gap-4 items-center bg-white/10 p-1.5 rounded-md"
               >
                 <LayoutDashboard width={18} className="text-lime-600" />
                 <p className="text-sm">Dashboard</p>

@@ -31,7 +31,7 @@ const MainMenu = () => {
         <p>Users</p>
       </Link>
       <Link
-        href={"/BlogAdmin"}
+        href={"/blog"}
         className="flex items-center rounded-md p-1.5 gap-4 hover:bg-white/10 "
       >
         <Newspaper className="text-lime-600" width={18} />
@@ -48,7 +48,7 @@ const MainMenu = () => {
         </Link>
       </div>
       <Link
-        href={"/adminLogin"}
+        href={"/login"}
         className="flex items-center rounded-md p-1.5 gap-4 hover:bg-white/10 "
       >
         <LogOut className="text-lime-600 " width={18} />

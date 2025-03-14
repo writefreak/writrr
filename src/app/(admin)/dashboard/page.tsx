@@ -1,12 +1,13 @@
 import DashboardBody from "@/components/admin/dashboardBody";
-import React from "react";
+import prisma from "@/lib/prisma";
+import { validateRequest } from "@/lib/validate-request";
+import { redirect } from "next/navigation";
 
-const page = () => {
-  return (
-    <div>
-      <DashboardBody />
-    </div>
-  );
+const Page = async () => {
+  const { session, user } = await validateRequest();
+  if (!session?.id) return redirect("/login");
+
+  return <DashboardBody user={user} />;
 };
 
-export default page;
+export default Page;

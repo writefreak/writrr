@@ -5,10 +5,19 @@ import ProfileAbout from "./profileAbout";
 import ProfileDetails from "./profileDetails";
 import { Delete } from "./delete";
 import { Edit } from "./edit";
+import Link from "next/link";
+import { ChevronLeft } from "lucide-react";
 
 const ProfileHead = () => {
   return (
     <div>
+      <Link
+        href={"/profile/profileDashboard"}
+        className="flex items-center text-sm p-4 md:hidden"
+      >
+        <ChevronLeft className="h-6 w-6" />
+        <span>Back</span>
+      </Link>
       <div className="p-4">
         <UserImg
           src={"/images/beautiful-sky-full-stars-trona-ca.jpg"}

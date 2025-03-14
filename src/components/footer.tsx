@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-lime-600 sm:bg-black text-white mt-14 flex justify-between items-center sm:block">
+    <div className="bg-lime-600 text-white mt-14 flex justify-between items-center sm:block">
       <div className="flex justify-between p-5 sm:p-10">
         <div className="flex items-center sm:text-2xl">
           <p>The Writrr</p>
@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="sm:border-t text-xs  pr-4 sm:pr-0 sm:bg-black sm:px-10 sm:py-3 font-montserrat">
+      <div className="sm:border-t text-xs  pr-4 sm:pr-0 md:bg-white text-lime-600 sm:px-10 sm:py-3 font-montserrat">
         <p>© 2024 The Writrr. All Rights Reserved.</p>
       </div>
     </div>

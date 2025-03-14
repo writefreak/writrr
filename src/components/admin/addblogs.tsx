@@ -1,6 +1,7 @@
 import React from "react";
 import { Plus } from "lucide-react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const AddBlogs = () => {
   return (
@@ -15,13 +16,15 @@ const AddBlogs = () => {
           <p className="text-xs md:text-sm">Find all new and existing blogs</p>
         </div>
 
-        <Button
-          variant={"outline"}
-          className="w-[6rem] md:w-auto flex items-center bg-transparent hover:bg-white/30 hover:text-white gap-3 dark:border-white dark:hover:bg-white/30"
-        >
-          <Plus />
-          <span className="text-xs md:text-base">New blog</span>
-        </Button>
+        <Link href={"/addBlog"}>
+          <Button
+            variant={"outline"}
+            className="w-[6rem] md:w-auto flex items-center bg-transparent hover:bg-white/30 hover:text-white gap-3 dark:border-white dark:hover:bg-white/30"
+          >
+            <Plus />
+            <span className="text-xs md:text-base">New blog</span>
+          </Button>
+        </Link>
       </div>
     </div>
   );

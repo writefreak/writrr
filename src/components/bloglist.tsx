@@ -21,7 +21,10 @@ interface Props {
 
 const BlogList = ({ data, id }: Props) => {
   return (
-    <div id={cn("", id)} className="grid sm:grid-cols-4 font-oswald">
+    <div
+      id={cn("", id)}
+      className="grid grid-cols-1 md:px-16 md:grid-cols-4 font-oswald"
+    >
       {/* Map through the blogs array and pass each blog to the BlogCards component */}
       {data.map((blog) => (
         <BlogCards key={blog.id} blog={blog} />
