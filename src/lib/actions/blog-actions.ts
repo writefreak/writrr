@@ -1,10 +1,10 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-
-import prisma from "../prisma";
 import { PostFormInput, PostFormSchema } from "../validators/auth";
 import { validateRequest } from "../validate-request";
+import prisma from "../prisma";
+import { PrismaClient } from "@prisma/client";
 
 export interface ActionResponse<T> {
   fieldError?: Partial<Record<keyof T, string | undefined>>;
@@ -24,6 +24,8 @@ export async function getPosts(args: {
   try {
     const { user } = await validateRequest(); //use anywhere you want to validate user
     const { take, skip, orderBy } = args;
+    const prisma = new PrismaClient();
+
     const posts = await prisma.blogs.findMany({
       where: {
         userId: user?.id,

@@ -23,7 +23,7 @@ export async function loginUser(email: string, password: string) {
     }
 
     // Check if a session already exists for this user
-    const existingSession = await prisma.session.findUnique({
+    const existingSession = await prisma.session.findFirst({
       where: { userId: user.id },
     });
 

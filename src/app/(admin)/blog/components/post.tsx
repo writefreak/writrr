@@ -7,13 +7,13 @@ import {
 import { format } from "date-fns";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import NewPost from "./new-post";
 import { toast } from "sonner";
 import { DeletePost, PostType } from "@/lib/actions/blog-actions";
 import { uniqueId } from "@/lib/utils";
 import HtmlText from "@/components/html-text";
 import Image from "@/components/image";
+import Link from "next/link";
 
 type Props = {
   open: boolean;
@@ -21,6 +21,10 @@ type Props = {
   post: PostType;
   edit?: string;
 };
+
+interface ImageType {
+  url: string;
+}
 
 export function PostAlert({ open, post, postId, edit }: Props) {
   const router = useAlertToggle();
@@ -44,7 +48,7 @@ export function PostAlert({ open, post, postId, edit }: Props) {
                 <div className="w-full">
                   <div className="flex flex-col gap-5 py-3">
                     <div className="grid sm:grid-cols-3 gap-4">
-                      {post?.images?.map((im) => (
+                      {post?.images?.map((im: { url: string }) => (
                         <div
                           key={uniqueId()}
                           className="flex justify-center w-full h-32 items-center"
