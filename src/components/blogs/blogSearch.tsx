@@ -9,12 +9,12 @@ interface Props {
 
 const BlogSearch = ({ className }: Props) => {
   return (
-    <div className={cn("px-6 pt-7 md:pt-0 md:pb-5 space-y-3", className)}>
+    <div className={cn("px-6 pt-7 md:pt-0 md:pb-5 space-y-3 ", className)}>
       <h3 className="text-2xl font-raleway">Search Blogs</h3>
       <div className="md:pb-2">
         <form
           action=""
-          className="border-2 border-black rounded-full flex items-center px-2"
+          className="border-2 border-black dark:border-lime-600 rounded-full flex items-center px-2"
         >
           <input
             type="text"

@@ -10,6 +10,7 @@ import {
   Lato,
 } from "next/font/google";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -64,17 +65,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${raleway.variable} ${poppins.variable} ${montserrat.variable} ${lato.variable} ${oswald.variable} ${inter.variable} ${geistMono.variable} font-raleway antialiased`}
       >
-        {children}
-        <Toaster
-          richColors={true}
-          duration={4000}
-          theme="system"
-          position="bottom-right"
-        />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster
+            richColors={true}
+            duration={4000}
+            theme="system"
+            position="bottom-right"
+          />
+        </ThemeProvider>
       </body>
     </html>
   );

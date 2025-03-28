@@ -4,7 +4,7 @@ const BodyText = () => {
   return (
     <div className="">
       <div className="flex pt-28 sm:pt-0 flex-col gap-4 sm:gap-8 h-full sm:h-screen">
-        <h3 className="text-center sm:text-left text-3xl sm:text-8xl font-raleway">
+        <h3 className="text-center sm:text-left text-3xl sm:text-8xl font-raleway md:dark:text-lime-600">
           Welcome <br />
           To a Fascinating <br className="hidden sm:block" /> World!
         </h3>
@@ -16,7 +16,7 @@ const BodyText = () => {
       </div>
 
       <img
-        src="/images/woman-taking-photo-rural-surroundings.jpg"
+        src="/images/5g-connection-technology-background-with-man-using-futuristic-virtual-screen-digital-remix.jpg"
         alt=""
         className="w-full rounded-md"
       />

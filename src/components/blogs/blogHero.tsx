@@ -30,7 +30,7 @@ const BlogHero = () => {
           onSetActive={handleSetActive}
           className="hidden md:flex"
         >
-          <Button className="bg-lime-600 flex items-center text-white rounded-full">
+          <Button className="bg-lime-600 hover:bg-lime-600 flex items-center text-white rounded-full">
             View Blogs
             <ChevronDown />
           </Button>

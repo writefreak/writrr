@@ -6,7 +6,7 @@ const Catpills = () => {
     <div className="flex flex-wrap justify-center gap-3 md:w-[37rem] md:justify-center">
       {catpill.map((cat) => (
         <Button
-          className="rounded-full border-2 hover:text-white hover:bg-black border-black text-black font-inter bg-white"
+          className="rounded-full border-2 dark:bg-lime-600 dark:text-white hover:text-white hover:bg-black border-black text-black font-inter bg-white"
           key={cat.id}
         >
           {cat.slug}
