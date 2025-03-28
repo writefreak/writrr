@@ -10,8 +10,9 @@ export async function getBlogCategories() {
       },
     });
 
-    return categories || [];
+    return categories;
   } catch (error) {
+    console.log(error);
     return [];
   }
 }

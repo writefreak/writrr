@@ -1,3 +1,4 @@
+import { Backdrop } from "@/components/backdrop";
 import BackTop from "@/components/backTop";
 import Bloglist from "@/components/bloglist";
 import Body from "@/components/body";
@@ -9,23 +10,26 @@ import ResizedCat from "@/components/resizedcat";
 import View from "@/components/view";
 import { getBlogs } from "@/lib/actions/blog";
 import React from "react";
+import { Element } from "react-scroll";
 
 const page = async () => {
   const data = await getBlogs();
-  console.log("AWS Access Key:", process.env.NEXT_PUBLIC_aws_access_key);
 
   return (
-    <div className="sm:w-full">
-      <div className="">
-        <Header />
-      </div>
+    <div>
+      <div className="md:w-full dark:bg-black">
+        <div className="">
+          <Header />
+        </div>
+        <Backdrop />
 
-      <Body />
-      <ResizedCat />
-      <View className="font-montserrat  font-light" />
-      <Bloglist id={"blogs"} data={data} />
-      <BackTop />
-      <Footer />
+        {/* <Body /> */}
+
+        <Bloglist id={"blogs"} data={data} />
+        <ResizedCat />
+        <BackTop />
+        <Footer />
+      </div>
     </div>
   );
 };

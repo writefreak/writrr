@@ -17,8 +17,8 @@ interface Props {
 
 const BlogCards = ({ blog, className }: Props) => {
   return (
-    <div className={cn("grid grid-cols-1  p-4 md:", className)} id={cn("")}>
-      <Card key={blog.id} className="rounded-xl">
+    <div className={cn("flex flex-1 p-4", className)} id={cn("")}>
+      <Card key={blog.id} className="rounded-xl flex flex-col">
         <Link href={`/blogs/${blog.id}`} className="">
           {/* dynamic paging above */}
 
@@ -29,14 +29,16 @@ const BlogCards = ({ blog, className }: Props) => {
             alt=""
             className="rounded-xl h-[250px] md:h-[170px] object-cover w-[390px] md:w-full"
           />
-          <div className="p-3 space-y-1 flex flex-col">
-            <div className="flex items-center">
-              <Dot className="text-lime-600" />
-              <p className="text-sm font-semibold text-black/50 font-lato">
-                {blog.category.name}
-              </p>
+          <div className="p-3 space-y-1 flex flex-1 flex-col">
+            <div className="flex pb-2">
+              <div className="flex items-center dark:bg-lime-600/80 rounded-full px-2">
+                {/* <Dot className="text-lime-600 dark:text-white" /> */}
+                <p className="text-xs text-black/50 dark:text-white font-lato">
+                  {blog.category.name}
+                </p>
+              </div>
             </div>
-            <div className="flex flex-col h-full flex-1 gap-2">
+            <div className="flex flex-col h-full gap-2">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-bold font-raleway">{blog.title}</h3>
 
@@ -46,7 +48,7 @@ const BlogCards = ({ blog, className }: Props) => {
                 text={blog.description}
                 className="text-xs line-clamp-4 text-neutral-500 font-montserrat font-light"
               />
-              <div className="flex items-center gap-2 py-3">
+              <div className="flex flex-1 items-center gap-2 py-3">
                 <div>
                   <ProfileImg />
                 </div>
@@ -59,7 +61,7 @@ const BlogCards = ({ blog, className }: Props) => {
                       {blog.user.lastName}
                     </p>
                   </div>
-                  <p className="text-xs text-black/50 font-lato">
+                  <p className="text-xs text-black/50 dark:text-white font-lato">
                     {format(blog.created, "dd-MMM-yyyy")}
                   </p>
                 </div>

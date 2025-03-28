@@ -17,7 +17,7 @@ function RecentBlogs({ data }: RecentProps) {
         {data.map((b) => (
           <Card
             key={uniqueId()}
-            className=" bg-transparent min-h-96  md:h-[300px] w-full bg-white  gap-1 grid grid-rows-[60%,auto]"
+            className=" bg-transparent min-h-96 md:h-[300px] w-full bg-white dark:bg-black  gap-1 grid grid-rows-[60%,auto]"
           >
             <div className="w-full h-full ">
               {b.images[0] && (
@@ -33,15 +33,15 @@ function RecentBlogs({ data }: RecentProps) {
                 />
               )}
             </div>
-            <div className="flex flex-col gap-1 px-3">
+            <div className="flex flex-col gap-1 px-3 flex-1">
               <time className="text-xs text-gray-500 ">
                 {format(new Date(b.created), "MMM d, yyyy,  hh:mm a")}
               </time>
               <Link href={`/blog/?postId=${b.id}`} className="space-y-2">
-                <h2 className="text-base">{b.title}</h2>
+                <h2 className="text-sm">{b.title}</h2>
                 <HtmlText
                   text={b.description}
-                  className="text-xs line-clamp-4 text-gray-500"
+                  className="text-xs line-clamp-3 text-gray-500"
                 />
               </Link>
             </div>

@@ -7,10 +7,8 @@ if (process.env.NODE_ENV === "production") {
 } else {
   // @ts-expect-error @typescript-eslint/ban-ts-comment
   if (!global.prisma) {
-    // // @ts-expect-error @typescript-eslint/ban-ts-comment
-    // global.prisma = new PrismaClient({
-    //   transactionOptions: {},
-    // });
+    // @ts-expect-error @typescript-eslint/ban-ts-comment
+    global.prisma = new PrismaClient();
   } // @ts-expect-error @typescript-eslint/ban-ts-comment
   prisma = global.prisma;
 }

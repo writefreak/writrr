@@ -3,8 +3,8 @@ import React from "react";
 const BodyText = () => {
   return (
     <div className="">
-      <div className="flex pt-28 sm:pt-0 flex-col gap-4 sm:gap-8 h-full sm:h-screen">
-        <h3 className="text-center sm:text-left text-3xl sm:text-8xl font-raleway md:dark:text-lime-600">
+      <div className="flex pt-28 sm:pt-0 flex-col gap-4 md:gap-8 h-full md:h-screen">
+        <h3 className="text-center md:text-left text-3xl md:text-8xl font-raleway md:dark:text-lime-600">
           Welcome <br />
           To a Fascinating <br className="hidden sm:block" /> World!
         </h3>
@@ -15,11 +15,11 @@ const BodyText = () => {
         </p>
       </div>
 
-      <img
+      {/* <img
         src="/images/5g-connection-technology-background-with-man-using-futuristic-virtual-screen-digital-remix.jpg"
         alt=""
         className="w-full rounded-md"
-      />
+      /> */}
 
       {/* <div className="flex justify-center pt-16">
         <Link href={"#"}>

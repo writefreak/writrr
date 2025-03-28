@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id          String     @id @default(cuid())
+  firstName   String
+  lastName    String
+  email       String     @unique
+  phoneNumber String?
+  password    String?
+  imageId     String?
+  role        String     @default("user")
+  blogPosts   Blogs[]
+  comments    Comments[]
+  image       Images?
+  likes       Likes[]
+  sessions    Session[]
+}
+
+model Blogs {
+  id          String     @id @default(cuid())
+  title       String     @unique
+  description String
+  links       String[]
+  verified    Boolean    @default(false)
+  created     DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  categoryId  String
+  userId      String
+  category    Category   @relation(fields: [categoryId], references: [id])
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  comments    Comments[]
+  images      Images[]
+  likes       Likes[]
+}
+
+model Images {
+  id        String   @id @default(cuid())
+  url       String
+  createdAt DateTime @default(now())
+  blogId    String?
+  userId    String?  @unique
+  blog      Blogs?   @relation(fields: [blogId], references: [id], onDelete: Cascade)
+  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Category {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  slug      String   @unique
+  createdAt DateTime @default(now())
+  blogs     Blogs[]
+}
+
+model Likes {
+  id     String @id @default(cuid())
+  userId String
+  blogId String
+  blog   Blogs  @relation(fields: [blogId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Comments {
+  id     String @id @default(cuid())
+  userId String
+  blogId String
+  blog   Blogs  @relation(fields: [blogId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  expiresAt DateTime
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

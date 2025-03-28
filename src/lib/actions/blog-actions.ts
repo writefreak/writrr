@@ -24,7 +24,6 @@ export async function getPosts(args: {
   try {
     const { user } = await validateRequest(); //use anywhere you want to validate user
     const { take, skip, orderBy } = args;
-    const prisma = new PrismaClient();
 
     const posts = await prisma.blogs.findMany({
       where: {
@@ -40,6 +39,8 @@ export async function getPosts(args: {
         },
       },
     });
+    const users = await prisma.user.findMany();
+    console.log(users);
     return posts;
   } catch (error) {
     console.error(error);

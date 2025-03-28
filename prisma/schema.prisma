@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+  output = "./generated/client"
 }
 
 datasource db {
@@ -16,12 +17,12 @@ model User {
   phoneNumber String?
   password    String?
   imageId     String?
+  role        String     @default("user")
   blogPosts   Blogs[]
   comments    Comments[]
   image       Images?
   likes       Likes[]
   sessions    Session[]
-  role        String @default("user")
 }
 
 model Blogs {
@@ -77,7 +78,7 @@ model Comments {
 
 model Session {
   id        String   @id @default(cuid())
-  userId    String   
+  userId    String
   expiresAt DateTime
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

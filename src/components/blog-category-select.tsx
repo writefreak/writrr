@@ -30,6 +30,7 @@ const BlogCategorySelect = ({
   useEffect(() => {
     const fetchCountries = async () => {
       const categories = await getBlogCategories();
+      console.log(categories);
       setBlogCategories(categories);
     };
     fetchCountries();
