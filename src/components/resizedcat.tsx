@@ -12,7 +12,7 @@ const ResizedCat = () => {
         </p>
         <div className="grid sm:grid-cols-2 gap-5 p-4 select-none">
           {category.map((c) => (
-            <Card key={c.id}>
+            <Card key={c.id} data-aos="fade-up">
               <div className="grid grid-cols-2 p-2 gap-5 md:h-[200px]">
                 <img
                   src={c.img}

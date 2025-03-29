@@ -16,7 +16,7 @@ const Body = ({ className }: Props) => {
   };
   return (
     <div className={cn("md:pt-36 p-4", className)}>
-      <div className=" md:w-[1100px] mx-auto">
+      <div className=" md:w-[1100px] mx-auto " data-aos="fade-up">
         <div>
           <BodyText />
         </div>

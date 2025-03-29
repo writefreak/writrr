@@ -1,3 +1,4 @@
+import AOSInit from "@/components/aos.d";
 import { Backdrop } from "@/components/backdrop";
 import BackTop from "@/components/backTop";
 import Bloglist from "@/components/bloglist";
@@ -24,6 +25,7 @@ const page = async () => {
         <Backdrop />
 
         {/* <Body /> */}
+        <AOSInit />
         <View />
         <Bloglist id={"blogs"} data={data} />
         <ResizedCat />

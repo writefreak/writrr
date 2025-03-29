@@ -27,7 +27,7 @@ const BlogList = ({ data, id }: Props) => {
     >
       {/* Map through the blogs array and pass each blog to the BlogCards component */}
       {data.map((blog) => (
-        <BlogCards key={blog.id} blog={blog} />
+        <BlogCards key={blog.id} blog={blog}  />
       ))}
     </div>
   );

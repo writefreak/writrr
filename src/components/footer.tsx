@@ -2,7 +2,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-lime-600 md:dark:bg-black text-white mt-14 flex justify-between items-center sm:block">
+    <div
+      className="bg-lime-600 md:dark:bg-black text-white mt-14 flex justify-between items-center sm:block"
+      data-aos="fade-up"
+    >
       <div className="flex justify-between p-5 sm:p-10">
         <div className="flex items-center sm:text-2xl">
           <p>The Writrr</p>

@@ -6,6 +6,8 @@ import { Card } from "../ui/card";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Element } from "react-scroll";
+import HtmlText from "../html-text";
+import Image from "../image";
 
 interface Props {
   id?: any;
@@ -19,21 +21,35 @@ const BlogBody = ({ id, data }: Props) => {
       </div>
       <div className="grid md:grid-cols-4 gap-3 p-4">
         {data.map((blog) => (
-          <Card key={blog.id} className="rounded-xl">
-            <div className="flex flex-col gap-2">
+          <Card key={blog.id} className="rounded-xl ">
+            <div className="flex flex-1 flex-col gap-2">
               <div>
-                <img
+                {/* <img
                   alt=""
                   src="/images/full-shot-man-experiencing-virtual-reality.jpg"
                   className="rounded-xl object-cover transition-transform duration-500 group-hover:scale-110"
+                /> */}
+                <Image
+                  bucketName="images"
+                  src={blog.images[0]?.url}
+                  className="rounded-md object-cover h-[200px]"
+                  alt={blog.title}
+                  scale={true}
+                  // zoomIn={true}
+                  folderName="blogs"
                 />
               </div>
 
               <div className="space-y-2 p-2">
                 <h2 className="text-xl md:text-base font-bold">{blog.title}</h2>
-                <p className="line-clamp-2 text-sm md:text-sm font-poppins font-light">
+                {/* <p className="line-clamp-2 text-sm md:text-sm font-poppins font-light">
                   {blog.description}
-                </p>
+                </p> */}
+
+                <HtmlText
+                  text={blog.description}
+                  className="line-clamp-2 text-sm md:text-xs text-neutral-300 font-poppins font-light"
+                />
 
                 <Link
                   href={`/blogs/${blog.id}`}

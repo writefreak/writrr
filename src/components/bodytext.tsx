@@ -1,15 +1,32 @@
 import React from "react";
+import { FlipWords } from "./flip-words";
 
 const BodyText = () => {
+  const words = [
+    "Fascinating",
+    "Captivating",
+    "Mesmerizing",
+    "Modern",
+    "Creative",
+  ];
   return (
     <div className="">
       <div className="flex pt-28 sm:pt-0 flex-col gap-4 md:gap-8 h-full md:h-screen">
-        <h3 className="text-center md:text-left text-3xl md:text-8xl font-raleway md:dark:text-lime-600">
+        <div className="text-center md:text-left text-3xl md:text-8xl font-raleway md:dark:text-lime-600">
           Welcome <br />
-          To a Fascinating <br className="hidden sm:block" /> World!
-        </h3>
+          To a{" "}
+          <FlipWords
+            words={words}
+            duration={2000}
+            className="text-3xl md:text-8xl font-raleway md:dark:text-lime-600"
+          />{" "}
+          <br className="hidden sm:block" /> World!
+        </div>
 
-        <p className="text-center sm:text-left text-base sm:text-3xl pb-9 font-montserrat font-light">
+        <p
+          className="text-center sm:text-left text-base sm:text-3xl pb-9 font-montserrat font-light"
+          data-aos="fade-up"
+        >
           Stay informed and inspired <br className="" />
           with the latest tech insights and trends.
         </p>
