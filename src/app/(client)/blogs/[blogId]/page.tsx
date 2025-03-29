@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import HtmlText from "@/components/html-text";
 import Image from "@/components/image";
 import Picture from "@/components/ui/image";
@@ -33,32 +34,37 @@ const page = async (props: Props) => {
     },
   });
   return (
-    <div className="p-6 md:px-16 md:py-12 md:p-0 space-y-5">
-      <div className="">
-        <div className="md:h-[500px]  md:w-[900px] h-[300px] object-cover">
-          <Image
-            bucketName="images"
-            folderName="blogs"
-            src={data?.images[0].url || ""}
-            alt=""
-            className="w-full h-full rounded-xl md:rounded-none"
-          />
-        </div>
-      </div>
-      <div className="md:pt-6 space-y-3">
-        <div className="space-y-3">
-          <h3 className="md:text-4xl font-inter w-96 md:w-full text-2xl">
-            {data?.title}
-          </h3>
-          <div className=" bg-lime-200 w-24 rounded-full text-center p-1">
-            <h6 className="text-xs">{data?.category.name}</h6>
+    <div>
+      <div className="p-6 md:px-16 md:py-12 md:p-0 space-y-5">
+        <div className="">
+          <div className="md:h-[500px]  md:w-[900px] h-[300px]">
+            <Image
+              bucketName="images"
+              folderName="blogs"
+              src={data?.images[0].url || ""}
+              alt=""
+              className="w-full h-full rounded-xl md:rounded-none object-cover"
+            />
           </div>
         </div>
-        <HtmlText
-          text={data?.description || ""}
-          className="font-poppins font-light md:pt-5"
-        />
+        <div className="">
+          <div className="md:pt-6 space-y-3">
+            <div className="space-y-3">
+              <h3 className="md:text-4xl font-inter w-96 md:w-full text-2xl">
+                {data?.title}
+              </h3>
+              <div className=" bg-lime-600 w-24 rounded-full text-center p-1">
+                <h6 className="text-xs">{data?.category.name}</h6>
+              </div>
+            </div>
+            <HtmlText
+              text={data?.description || ""}
+              className="font-poppins font-light md:pt-5"
+            />
+          </div>
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };
