@@ -29,6 +29,7 @@ const BlogCards = ({ blog, className }: Props) => {
             alt=""
             className="rounded-xl h-[250px] md:h-[170px] object-cover w-[390px] md:w-full"
           />
+
           <div className="p-3 space-y-1 flex flex-1 flex-col">
             <div className="flex pb-2">
               <div className="flex items-center dark:bg-lime-600/80 rounded-full px-2">
@@ -49,9 +50,8 @@ const BlogCards = ({ blog, className }: Props) => {
                 className="text-xs line-clamp-4 text-neutral-500 font-montserrat font-light"
               />
               <div className="flex flex-1 items-center gap-2 py-3">
-                <div>
-                  <ProfileImg />
-                </div>
+                <ProfileImg />
+
                 <div className="leading-6">
                   <div className="flex items-center gap-1">
                     <p className="text-sm font-inter font-light">

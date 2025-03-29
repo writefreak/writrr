@@ -35,7 +35,7 @@ model Blogs {
   updatedAt   DateTime   @updatedAt
   categoryId  String
   userId      String
-  category    Category   @relation(fields: [categoryId], references: [id])
+  category    Category   @relation(fields: [categoryId], references: [id], onDelete: Cascade)
   user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
   comments    Comments[]
   images      Images[]
@@ -54,10 +54,10 @@ model Images {
 
 model Category {
   id        String   @id @default(cuid())
-  name      String   @unique
+  name      String   @unique 
   slug      String   @unique
   createdAt DateTime @default(now())
-  blogs     Blogs[]
+  blogs     Blogs[]  
 }
 
 model Likes {

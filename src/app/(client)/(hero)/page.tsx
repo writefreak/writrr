@@ -24,7 +24,7 @@ const page = async () => {
         <Backdrop />
 
         {/* <Body /> */}
-
+        <View />
         <Bloglist id={"blogs"} data={data} />
         <ResizedCat />
         <BackTop />
