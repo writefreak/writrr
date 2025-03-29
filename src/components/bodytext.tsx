@@ -20,7 +20,7 @@ const BodyText = () => {
             duration={2000}
             className="text-3xl md:text-8xl font-raleway md:dark:text-lime-600"
           />{" "}
-          <br className="hidden sm:block" /> World!
+          <br className="" /> World!
         </div>
 
         <p
