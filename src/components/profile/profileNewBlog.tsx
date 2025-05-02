@@ -9,7 +9,7 @@ const ProfileNewBlog = () => {
       <div className="p-4 w-full">
         <h2 className="font-bold text-2xl">Create New Blog</h2>
         <p className="">Please fill in the following details</p>
-        <NewPost />
+        {/* <NewPost /> */}
         <div className="flex gap-2 py-8">
           <Button className="w-full">Submit</Button>
 

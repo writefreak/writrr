@@ -14,7 +14,7 @@ import React from "react";
 import { Element } from "react-scroll";
 
 const page = async () => {
-  const data = await getBlogs();
+  const data = await getBlogs({});
 
   return (
     <div>
