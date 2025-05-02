@@ -18,33 +18,33 @@ interface Props {
 
 const ProfileBar = ({ className }: Props) => {
   return (
-    <div className="bg-lime-600 md:h-screen fixed z-50 ">
-      <div className={cn("space-y-5 text-sm text-white", className)}>
+    <div className="bg-white text-black md:h-screen fixed z-50 shadow-xl">
+      <div className={cn("space-y-5 text-sm text-black", className)}>
         <p className="text-xl hidden md:block px-3">Welcome!</p>
         <Link
           href={"/profile/profileDashboard"}
-          className="flex text-white gap-2 items-center bg-white/10 p-1.5 rounded-md"
+          className="flex text-black gap-2 items-center bg-white/10 p-1.5 rounded-md hover:bg-black/10"
         >
           <LayoutDashboard width={18} />
           <p className="text-sm">Dashboard</p>
         </Link>
         <Link
           href={"/profile/profileDesc"}
-          className="flex items-center rounded-md p-1.5 gap-4 hover:bg-white/10 "
+          className="flex items-center rounded-md p-1.5 gap-4 hover:bg-black/10 "
         >
-          <User className="text-white" width={18} />
+          <User className="text-black" width={18} />
           <p>Profile</p>
         </Link>
         <Link
           href={"/profile/userBlog"}
-          className="flex items-center rounded-md p-1.5 gap-4 hover:bg-white/10 "
+          className="flex items-center rounded-md p-1.5 gap-4 hover:bg-black/10 "
         >
-          <Newspaper className="text-white" width={18} />
+          <Newspaper className="text-black" width={18} />
           <p>Blogs</p>
         </Link>
 
-        <div className="flex items-center rounded-md p-1.5 gap-4 hover:bg-white/10 ">
-          <BellRing className="text-white" width={18} />
+        <div className="flex items-center rounded-md p-1.5 gap-4 hover:bg-black/10 ">
+          <BellRing className="text-black" width={18} />
           <Link
             href={"/profile/profileNotify"}
             className="flex items-center gap-5"
@@ -57,9 +57,9 @@ const ProfileBar = ({ className }: Props) => {
         </div>
         <Link
           href={"/login"}
-          className="flex items-center rounded-md p-1.5 gap-4 hover:bg-white/10 "
+          className="flex items-center rounded-md p-1.5 gap-4 hover:bg-black/10 "
         >
-          <LogOut className="text-white" width={18} />
+          <LogOut className="text-black" width={18} />
           <p>Logout</p>
         </Link>
       </div>

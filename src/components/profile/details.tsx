@@ -14,7 +14,7 @@ const Details = ({ className, label, value }: Props) => {
           <h3 className=" font-poppins text-sm">{label}</h3>
         </div>
         <div className="flex justify-end w-full">
-          <div className="bg-white rounded-xl border p-2 border-lime-600 w-[16rem] md:w-[20rem]">
+          <div className="bg-white rounded-xl border p-2 border-gray-200 w-[16rem] md:w-[20rem]">
             <p className="text-xs font-poppins font-light">{value}</p>
           </div>
         </div>

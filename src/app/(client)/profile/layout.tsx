@@ -12,7 +12,7 @@ const UserLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <div className="grid bg-white px-2 md:p-0 md:grid-cols-[14rem,auto]">
+    <div className="grid bg-gray-100/25 md:h-screen px-2 md:p-0 md:grid-cols-[14rem,auto]">
       <div>
         <ProfileBar className="hidden md:block p-3" />
         <div className="flex justify-end">

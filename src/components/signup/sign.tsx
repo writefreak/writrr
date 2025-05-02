@@ -6,6 +6,7 @@ import { Eye } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signUpUser } from "@/server/signup";
+import ImageUploader from "../imageUploader";
 const SignForm = () => {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -13,12 +14,17 @@ const SignForm = () => {
     lastName: "",
     email: "",
     password: "",
+    about: "",
+    image: [],
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const handleText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setFormData({ ...formData, about: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -46,6 +52,17 @@ const SignForm = () => {
 
       <form onSubmit={handleSubmit}>
         <div className="space-y-3 py-5">
+          {/* <div className="flex flex-col gap-2">
+            <h3 className="text-sm font-raleway">Add a profile picture</h3>
+            <ImageUploader
+              bucketName="images"
+              folderName="blogs"
+              images={formData.image as any}
+              saveImages={(image: any) =>
+                setFormData((prev) => ({ ...prev, image: image }))
+              }
+            />
+          </div> */}
           <div className="grid grid-cols-2 gap-6">
             <input
               type="text"
@@ -54,7 +71,7 @@ const SignForm = () => {
               value={formData.firstName}
               onChange={handleChange}
               required
-              className="bg-black/10 outline-none p-4 rounded-xl placeholder:text-xs placeholder:text-black/50"
+              className="bg-black/10 outline-none p-4 dark:border border-gray-700 placeholder:dark:text-white rounded-xl placeholder:text-xs placeholder:text-black/50"
             />
             <input
               type="text"
@@ -63,7 +80,7 @@ const SignForm = () => {
               value={formData.lastName}
               onChange={handleChange}
               required
-              className="bg-black/10 outline-none p-3 rounded-xl placeholder:text-xs placeholder:text-black/50"
+              className="bg-black/10 outline-none p-3 dark:border border-gray-700 placeholder:dark:text-white rounded-xl placeholder:text-xs placeholder:text-black/50"
             />
           </div>
           <div className="grid gap-3">
@@ -74,9 +91,9 @@ const SignForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="bg-black/10 outline-none p-3 rounded-xl placeholder:text-xs placeholder:text-black/50"
+              className="bg-black/10  dark:border border-gray-700 placeholder:dark:text-white outline-none p-3 rounded-xl placeholder:text-xs placeholder:text-black/50"
             />
-            <div className="flex items-center bg-black/10 outline-none p-3 rounded-xl grid-cols-2 justify-between">
+            <div className="flex items-center bg-black/10 outline-none dark:border border-gray-700  p-3 rounded-xl grid-cols-2 justify-between">
               <input
                 type="password"
                 name="password"
@@ -84,9 +101,21 @@ const SignForm = () => {
                 value={formData.password}
                 onChange={handleChange}
                 required
-                className="placeholder:text-xs placeholder:text-black/50 bg-transparent outline-none"
+                className="placeholder:text-xs  placeholder:dark:text-white placeholder:text-black/50 bg-transparent outline-none"
               />
               <Eye className="h-4 w-4" />
+            </div>
+            <div>
+              <div className="w-full bg-black/10 outline-none dark:border border-gray-700 p-2 rounded-xl h-24">
+                <textarea
+                  name="about"
+                  id=""
+                  placeholder="Please tell us a bit about yourself..."
+                  className="w-full outline-none bg-transparent text-xs placeholder:text-black/50 break-words resize-none"
+                  value={formData.about}
+                  onChange={handleText}
+                />
+              </div>
             </div>
           </div>
           {error && <p className="text-red-500 text-sm">{error}</p>}

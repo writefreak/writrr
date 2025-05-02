@@ -19,7 +19,7 @@ export function Delete({ className }: Props) {
   return (
     <Dialog>
       <DialogTrigger asChild className={cn("", className)}>
-        <Button className="bg-red-600 h-8 text-xs rounded-full flex items-center">
+        <Button className="bg-black h-8 text-xs rounded-full flex items-center">
           <Trash /> Delete Account
         </Button>
       </DialogTrigger>

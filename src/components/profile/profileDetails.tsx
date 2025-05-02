@@ -1,36 +1,23 @@
 import React from "react";
 import Details from "./details";
 import { Card } from "../ui/card";
+import { getProfile, UserData } from "@/server/profile";
 
-const ProfileDetails = () => {
+interface Props {
+  detail: UserData;
+}
+
+const ProfileDetails = ({ detail }: Props) => {
   return (
     <Card className="">
       <div className="bg-white rounded-xl space-y-3 p-4">
         <h3 className="font-bold">Basic Details</h3>
-        {item.map((i) => (
-          <Details key={i.id} label={i.label} value={i.value} />
-        ))}
+        <Details label={"Firstname"} value={detail?.firstName || ""} />
+        <Details label={"Lastname"} value={detail?.lastName || ""} />
+        <Details label={"Email"} value={detail?.email || ""} />
       </div>
     </Card>
   );
 };
 
 export default ProfileDetails;
-
-const item = [
-  {
-    id: 1,
-    label: "Name",
-    value: "Endwell Heritage",
-  },
-  {
-    id: 2,
-    label: "Username",
-    value: "Writefreak",
-  },
-  {
-    id: 3,
-    label: "Email",
-    value: "EndwellHeritage@gmail.com",
-  },
-];

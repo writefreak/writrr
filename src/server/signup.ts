@@ -8,6 +8,7 @@ export async function signUpUser(formData: {
   lastName: string;
   email: string;
   password: string;
+  about: string;
 }) {
   try {
     // Check if a user with the same email already exists
@@ -32,6 +33,7 @@ export async function signUpUser(formData: {
         lastName: formData.lastName,
         email: formData.email,
         password: hashedPassword,
+        about: formData.about,
       },
     });
 

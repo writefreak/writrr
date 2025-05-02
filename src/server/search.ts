@@ -1,33 +1,31 @@
-"use server";
 import prisma from "@/lib/prisma";
 
 interface Props {
   search?: string;
 }
 
-export async function getBlogs(props: Props) {
+export async function getSearch({ search }: Props) {
   try {
+    if (!search) return [];
     const data = await prisma.blogs.findMany({
-      where: props?.search
-        ? {
-            OR: [
-              {
-                title: {
-                  contains: props.search,
-                  mode: "insensitive",
-                },
+      where: {
+        OR: [
+          {
+            title: {
+              contains: search,
+              mode: "insensitive",
+            },
+          },
+          {
+            category: {
+              name: {
+                contains: search,
+                mode: "insensitive",
               },
-              {
-                category: {
-                  name: {
-                    contains: props.search,
-                    mode: "insensitive",
-                  },
-                },
-              },
-            ],
-          }
-        : {},
+            },
+          },
+        ],
+      },
       include: {
         user: {
           select: {
@@ -55,7 +53,7 @@ export async function getBlogs(props: Props) {
       orderBy: {
         created: "desc",
       },
-      take: 20,
+      take: 10,
     });
     return data;
   } catch (error) {
@@ -64,4 +62,4 @@ export async function getBlogs(props: Props) {
   }
 }
 
-export type BlogsType = Awaited<ReturnType<typeof getBlogs>>;
+export type SerachBlogData = Awaited<ReturnType<typeof getSearch>>;

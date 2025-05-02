@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client-js"
-  output = "./generated/client"
+  // output = "./generated/client"
 }
 
 datasource db {
@@ -18,6 +18,7 @@ model User {
   password    String?
   imageId     String?
   role        String     @default("user")
+  about       String? 
   blogPosts   Blogs[]
   comments    Comments[]
   image       Images?

@@ -1,11 +1,16 @@
 import BlogBody from "@/components/blogs/blogBody";
 import { getBlogs } from "@/lib/actions/blog";
-import prisma from "@/lib/prisma";
-import Link from "next/link";
 import React from "react";
 
-const page = async () => {
-  const data = await getBlogs();
+interface Props {
+  searchParams: Promise<{
+    search: string;
+  }>;
+}
+
+const page = async ({ searchParams }: Props) => {
+  const { search } = await searchParams;
+  const data = await getBlogs({ search });
   return (
     <div>
       <BlogBody data={data} />

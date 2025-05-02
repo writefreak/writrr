@@ -50,17 +50,17 @@ const LoginForm = () => {
               type="email"
               name="email"
               placeholder="Email: user@gmail.com"
-              className="bg-black/10 outline-none p-3 rounded-xl placeholder:text-xs placeholder:text-black/50"
+              className="bg-black/10 outline-none dark:border border-gray-700 p-3 rounded-xl placeholder:text-xs placeholder:dark:text-white placeholder:text-black/50"
               required
               value={formData.email}
               onChange={handleChange}
             />
-            <div className="flex items-center bg-black/10 outline-none p-3 rounded-xl justify-between">
+            <div className="flex items-center bg-black/10 outline-none p-3 rounded-xl justify-between dark:border border-gray-700 dark:text-white">
               <input
                 type="text"
                 name="password"
                 placeholder="Password"
-                className="placeholder:text-xs placeholder:text-black/50 bg-transparent outline-none"
+                className="placeholder:text-xs placeholder:text-black/50 placeholder:dark:text-white bg-transparent outline-none"
                 required
                 value={formData.password}
                 onChange={handleChange}

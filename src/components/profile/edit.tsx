@@ -19,7 +19,7 @@ export function Edit({ className }: Props) {
   return (
     <Dialog>
       <DialogTrigger asChild className={cn("", className)}>
-        <Button className="bg-black h-8 text-xs rounded-full">
+        <Button className="bg-lime-600 h-8 text-xs rounded-full">
           Edit details
         </Button>
       </DialogTrigger>
